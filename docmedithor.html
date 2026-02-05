@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medithor Services - Promotion TikTok</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --noir: #121212;
+            --blanc: #ffffff;
+            --orange: #ff6600;
+            --orange-clair: #ff944d;
+            --gris-fonce: #1e1e1e;
+            --gris-clair: #f5f5f5;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--noir);
+            color: var(--blanc);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Arrière-plan animé */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Formes flottantes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            border-radius: 50%;
+            background: var(--orange);
+            animation: float 15s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+            animation-duration: 20s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+            animation-duration: 25s;
+            background: var(--blanc);
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 15%;
+            animation-delay: 4s;
+            animation-duration: 18s;
+        }
+
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 75%;
+            animation-delay: 6s;
+            animation-duration: 22s;
+            background: var(--blanc);
+        }
+
+        .shape:nth-child(5) {
+            width: 50px;
+            height: 50px;
+            top: 70%;
+            left: 90%;
+            animation-delay: 8s;
+            animation-duration: 30s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-40px) translateX(30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(20px) translateX(-20px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-30px) translateX(-30px) rotate(270deg);
+            }
+        }
+
+        /* Lignes animées */
+        .line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--orange), transparent);
+            animation: lineMove 10s infinite linear;
+        }
+
+        .line:nth-child(6) {
+            top: 30%;
+            width: 100%;
+            animation-delay: 0s;
+        }
+
+        .line:nth-child(7) {
+            top: 60%;
+            width: 100%;
+            animation-delay: 5s;
+        }
+
+        @keyframes lineMove {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Particules */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: var(--orange-clair);
+            border-radius: 50%;
+            animation: particleFall linear infinite;
+        }
+
+        @keyframes particleFall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(255, 102, 0, 0.3);
+            animation: slideDown 0.8s ease;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 102, 0, 0.2);
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--orange);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--orange), transparent);
+            transition: var(--transition);
+        }
+
+        .logo:hover::after {
+            left: 100%;
+        }
+
+        .logo i {
+            color: var(--blanc);
+            animation: pulseIcon 2s infinite alternate;
+        }
+
+        @keyframes pulseIcon {
+            0% {
+                transform: scale(1);
+                text-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+            }
+            100% {
+                transform: scale(1.1);
+                text-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+            }
+        }
+
+        .logo span {
+            color: var(--blanc);
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: var(--blanc);
+            font-size: 20px;
+            transition: var(--transition);
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 102, 0, 0.1);
+        }
+
+        .social-icons a:hover {
+            color: var(--orange);
+            transform: translateY(-5px) scale(1.1);
+            background: rgba(255, 102, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+        }
+
+        /* Section Vidéo */
+        .video-section {
+            padding: 80px 0;
+            text-align: center;
+            animation: fadeIn 1s ease;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--orange);
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--orange), transparent);
+            bottom: -10px;
+            left: 15%;
+            border-radius: 2px;
+            animation: widthPulse 3s infinite alternate;
+        }
+
+        @keyframes widthPulse {
+            0% {
+                width: 70%;
+                background: linear-gradient(90deg, transparent, var(--orange), transparent);
+            }
+            100% {
+                width: 80%;
+                background: linear-gradient(90deg, transparent, #ff944d, transparent);
+            }
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.3);
+            animation: glowPulse 3s infinite alternate;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+            position: relative;
+            background-color: #000;
+        }
+
+        @keyframes glowPulse {
+            0% {
+                box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+            }
+            100% {
+                box-shadow: 0 15px 50px rgba(255, 102, 0, 0.6);
+            }
+        }
+
+        .custom-video-player {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .custom-video-player video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.5s ease;
+            z-index: 2;
+        }
+
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-overlay i {
+            font-size: 80px;
+            margin-bottom: 20px;
+            color: var(--orange);
+            cursor: pointer;
+            transition: var(--transition);
+            text-shadow: 0 0 20px rgba(255, 102, 0, 0.7);
+        }
+
+        .video-overlay i:hover {
+            transform: scale(1.2);
+        }
+
+        .video-overlay p {
+            color: var(--blanc);
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+            max-width: 80%;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .custom-video-player:hover .video-controls {
+            opacity: 1;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: var(--blanc);
+            font-size: 20px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .control-btn:hover {
+            color: var(--orange);
+            transform: scale(1.2);
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 0 15px;
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--orange);
+            width: 0%;
+            border-radius: 3px;
+            transition: width 0.1s linear;
+        }
+
+        .time-display {
+            color: var(--blanc);
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: rgba(30, 30, 30, 0.7);
+            animation: fadeInUp 1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--orange), var(--orange-clair), var(--orange));
+            animation: gradientMove 5s infinite linear;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(30, 30, 30, 0.9));
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 102, 0, 0.1);
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 102, 0, 0.05), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+            z-index: -1;
+        }
+
+        .service-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(255, 102, 0, 0.3);
+            border-color: rgba(255, 102, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: var(--orange);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 102, 0, 0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            animation: iconGlow 3s infinite alternate;
+        }
+
+        @keyframes iconGlow {
+            0% {
+                width: 60px;
+                height: 60px;
+                opacity: 0.3;
+            }
+            100% {
+                width: 80px;
+                height: 80px;
+                opacity: 0.7;
+            }
+        }
+
+        .service-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--blanc);
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+        }
+
+        .service-description {
+            color: #aaa;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #25D366, #1da851);
+            color: var(--blanc);
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            animation: buttonPulse 2s infinite alternate;
+        }
+
+        @keyframes buttonPulse {
+            0% {
+                box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            }
+            100% {
+                box-shadow: 0 5px 25px rgba(37, 211, 102, 0.6);
+            }
+        }
+
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .whatsapp-btn:hover::before {
+            left: 100%;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.08);
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+            animation: wiggle 2s infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(5deg);
+            }
+            75% {
+                transform: rotate(-5deg);
+            }
+        }
+
+        /* Section QR Codes */
+        .qr-section {
+            padding: 60px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--orange), transparent);
+        }
+
+        .qr-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .qr-card {
+            background: linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(30, 30, 30, 0.9));
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            max-width: 250px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .qr-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.3);
+            border-color: rgba(255, 102, 0, 0.5);
+        }
+
+        .qr-icon {
+            font-size: 40px;
+            color: var(--orange);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .qr-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--blanc);
+        }
+
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 102, 0, 0.3);
+            padding: 10px;
+            background-color: var(--blanc);
+            transition: var(--transition);
+        }
+
+        .qr-card:hover .qr-code {
+            border-color: var(--orange);
+            transform: scale(1.05);
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .qr-description {
+            color: #aaa;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(30, 30, 30, 0.9));
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255, 102, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--orange), var(--blanc), var(--orange));
+            animation: gradientMove 5s infinite linear;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--orange);
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+        }
+
+        .footer-column p, .footer-column a {
+            color: #aaa;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 0;
+        }
+
+        .footer-column a::before {
+            content: '▶';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--orange);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--orange);
+            padding-left: 15px;
+        }
+
+        .footer-column a:hover::before {
+            opacity: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            color: var(--orange);
+            margin-right: 10px;
+            width: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Compteur TikTok animé */
+        .tiktok-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 102, 0, 0.1);
+            border-radius: 10px;
+            min-width: 120px;
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 102, 0, 0.2);
+            border-color: rgba(255, 102, 0, 0.4);
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--orange);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .custom-video-player {
+                height: 350px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tiktok-stats {
+                gap: 15px;
+            }
+            
+            .stat-item {
+                min-width: 100px;
+                padding: 10px;
+            }
+            
+            .qr-container {
+                gap: 30px;
+            }
+            
+            .qr-card {
+                max-width: 220px;
+                padding: 20px;
+            }
+            
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .video-overlay i {
+                font-size: 60px;
+            }
+            
+            .video-overlay p {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .qr-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .qr-card {
+                max-width: 280px;
+            }
+            
+            .custom-video-player {
+                height: 300px;
+            }
+        }
+        
+        /* Instructions pour la vidéo */
+        .video-instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(255, 102, 0, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid var(--orange);
+            text-align: left;
+        }
+        
+        .video-instructions h3 {
+            color: var(--orange);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .video-instructions p {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .video-instructions code {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--orange-clair);
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Arrière-plan animé -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="particles" id="particles-container"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>Medithor</span> Services
+                </a>
+                <div class="social-icons">
+                    <a href="https://tiktok.com/@documentaire_sn" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="mailto:mouhamad0752@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Vidéo -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Mon Contenu TikTok</h2>
+            
+            <!-- Statistiques TikTok animées -->
+            <div class="tiktok-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="followers-count">443.1K</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2873</span>
+                    <span class="stat-label">Suivis</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8.6M</span>
+                    <span class="stat-label">J'aime</span>
+                </div>
+            </div>
+            
+            <div class="video-container">
+                <div class="custom-video-player">
+                    <!-- ICI : Remplacez "votre-video.mp4" par l'URL de votre vidéo -->
+                    <video id="myVideo" preload="metadata">
+                        <source src="c:\Users\Utilisateur\AppData\Local\CapCut\Videos\medserv.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+                    </video>
+                    
+                    <div class="video-overlay" id="videoOverlay">
+                        <i class="fas fa-play-circle" id="playBtn"></i>
+                        <p>Découvrez mon contenu TikTok</p>
+                        <p>Cliquez pour lire la vidéo</p>
+                    </div>
+                    
+                    <div class="video-controls">
+                        <button class="control-btn" id="playPauseBtn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="control-btn" id="muteBtn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                        </div>
+                        <button class="control-btn" id="fullscreenBtn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+           
+    
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Mes Services</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #aaa; font-size: 18px;">
+                Sélectionnez un service et contactez-moi directement sur WhatsApp pour réserver
+            </p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="service-title">Publicité</h3>
+                    <p class="service-description">
+                        Promotion de vos produits/services sur ma chaîne TikTok avec plus de 440K followers pour toucher un large public.
+                    </p>
+                    <a href="https://wa.me/773231268?text=Bonjour%20!%20Je%20suis%20intéressé(e)%20par%20votre%20service%20de%20Publicité%20sur%20TikTok" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Réserver sur WhatsApp
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">Création d'Affiche</h3>
+                    <p class="service-description">
+                        Conception graphique d'affiches professionnelles et attractives pour vos événements, produits ou promotions.
+                    </p>
+                    <a href="https://wa.me/773231268?text=Bonjour%20!%20Je%20suis%20intéressé(e)%20par%20votre%20service%20de%20Création%20d'Affiche" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Réserver sur WhatsApp
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Création de Site Web</h3>
+                    <p class="service-description">
+                        Développement de sites web modernes, responsives et optimisés pour tous vos besoins professionnels.
+                    </p>
+                    <a href="https://wa.me/773231268?text=Bonjour%20!%20Je%20suis%20intéressé(e)%20par%20votre%20service%20de%20Création%20de%20Site%20Web" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Réserver sur WhatsApp
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="service-title">Création Vidéo Professionnelle</h3>
+                    <p class="service-description">
+                        Production de vidéos professionnelles pour votre entreprise, produit ou service avec montage de haute qualité.
+                    </p>
+                    <a href="https://wa.me/773231268?text=Bonjour%20!%20Je%20suis%20intéressé(e)%20par%20votre%20service%20de%20Création%20Vidéo%20Professionnelle" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Réserver sur WhatsApp
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Création de Compte Monétisé</h3>
+                    <p class="service-description">
+                        Assistance pour créer et optimiser votre compte TikTok/autres réseaux pour la monétisation et croissance rapide.
+                    </p>
+                    <a href="https://wa.me/773231268?text=Bonjour%20!%20Je%20suis%20intéressé(e)%20par%20votre%20service%20de%20Création%20de%20Compte%20Monétisé" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Réserver sur WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section QR Codes -->
+    <section class="qr-section">
+        <div class="container">
+            <h2 class="section-title">Scannez pour nous rejoindre</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 20px; color: #aaa; font-size: 16px;">
+                Scannez les codes QR ci-dessous pour suivre mon compte TikTok ou me contacter directement sur WhatsApp
+            </p>
+            
+            <div class="qr-container">
+                <!-- QR Code TikTok -->
+                <div class="qr-card">
+                    <i class="fab fa-tiktok qr-icon"></i>
+                    <h3 class="qr-title">Mon TikTok</h3>
+                    <div class="qr-code">
+                        <!-- QR Code pour TikTok -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.tiktok.com/@documentaire_sn" alt="QR Code TikTok">
+                    </div>
+                    <p class="qr-description">Scannez pour suivre mon compte TikTok et voir mes vidéos</p>
+                </div>
+                
+                <!-- QR Code WhatsApp -->
+                <div class="qr-card">
+                    <i class="fab fa-whatsapp qr-icon"></i>
+                    <h3 class="qr-title">Mon WhatsApp</h3>
+                    <div class="qr-code">
+                        <!-- QR Code pour WhatsApp -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/773231268" alt="QR Code WhatsApp">
+                    </div>
+                    <p class="qr-description">Scannez pour discuter avec moi directement sur WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Medithor Services</h3>
+                    <p>Spécialiste en promotion TikTok, création de contenu et développement web. Plus de 440K followers sur TikTok.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +221 77 323 12 68</p>
+                        <p><i class="fas fa-envelope"></i> mouhamad0752@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Sénégal</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liens Rapides</h3>
+                    <a href="#">Accueil</a>
+                    <a href="#services">Services</a>
+                    <a href="https://tiktok.com/@documentaire_sn" target="_blank">Mon TikTok</a>
+                   
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Mes Statistiques TikTok</h3>
+                    <p><i class="fas fa-users"></i> 443.1K Followers</p>
+                    <p><i class="fas fa-eye"></i> 2873 Suivis</p>
+                    <p><i class="fas fa-heart"></i> 8.6M J'aime</p>
+                    <p><i class="fas fa-video"></i> Contenu viral régulier</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Medithor Services. Tous droits réservés. | documentaire_sn 🇸🇳</p>
+                <p style="margin-top: 10px; font-size: 12px; color: #ff6600;">Pour vos pubs et collaborations 📩</p>
+                <p style="margin-top: 5px; font-size: 12px; color: #aaa;">Scan les QR codes pour nous rejoindre!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Créer des particules animées
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Position aléatoire
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                // Animation avec délai aléatoire
+                const duration = 3 + Math.random() * 5;
+                const delay = Math.random() * 5;
+                particle.style.animation = `particleFall ${duration}s linear ${delay}s infinite`;
+                
+                // Taille aléatoire
+                const size = 1 + Math.random() * 3;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Opacité aléatoire
+                particle.style.opacity = 0.3 + Math.random() * 0.5;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Animation du compteur de followers
+        function animateCounter() {
+            const counter = document.getElementById('followers-count');
+            const finalValue = 443100;
+            let currentValue = 0;
+            const increment = finalValue / 100;
+            const duration = 2000; // 2 secondes
+            const intervalTime = duration / 100;
+            
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= finalValue) {
+                    currentValue = finalValue;
+                    clearInterval(timer);
+                    counter.textContent = "443.1K";
+                } else {
+                    counter.textContent = Math.floor(currentValue).toLocaleString();
+                }
+            }, intervalTime);
+        }
+
+        // Animation au défilement
+        function animateOnScroll() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            const qrCards = document.querySelectorAll('.qr-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            serviceCards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            qrCards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Animation pour les QR codes au survol
+        function animateQRCodes() {
+            const qrCards = document.querySelectorAll('.qr-card');
+            
+            qrCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.qr-icon');
+                    if (icon) {
+                        icon.style.transform = 'rotate(360deg)';
+                        icon.style.transition = 'transform 0.5s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.qr-icon');
+                    if (icon) {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        }
+
+        // Gestion du lecteur vidéo
+        function setupVideoPlayer() {
+            const video = document.getElementById('myVideo');
+            const videoOverlay = document.getElementById('videoOverlay');
+            const playBtn = document.getElementById('playBtn');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const muteBtn = document.getElementById('muteBtn');
+            const progressBar = document.getElementById('progressBar');
+            const progress = document.getElementById('progress');
+            const currentTimeEl = document.getElementById('currentTime');
+            const durationEl = document.getElementById('duration');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            
+            // Formatage du temps
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+            
+            // Mettre à jour la durée
+            video.addEventListener('loadedmetadata', function() {
+                durationEl.textContent = formatTime(video.duration);
+            });
+            
+            // Mettre à jour le temps actuel et la barre de progression
+            video.addEventListener('timeupdate', function() {
+                const currentTime = video.currentTime;
+                const duration = video.duration;
+                
+                currentTimeEl.textContent = formatTime(currentTime);
+                const progressPercent = (currentTime / duration) * 100;
+                progress.style.width = `${progressPercent}%`;
+            });
+            
+            // Lecture/Pause
+            function togglePlayPause() {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    videoOverlay.classList.add('hidden');
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            }
+            
+            playBtn.addEventListener('click', togglePlayPause);
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            
+            video.addEventListener('click', togglePlayPause);
+            
+            // Mute/Unmute
+            muteBtn.addEventListener('click', function() {
+                video.muted = !video.muted;
+                muteBtn.innerHTML = video.muted ? 
+                    '<i class="fas fa-volume-mute"></i>' : 
+                    '<i class="fas fa-volume-up"></i>';
+            });
+            
+            // Barre de progression
+            progressBar.addEventListener('click', function(e) {
+                const rect = progressBar.getBoundingClientRect();
+                const pos = (e.clientX - rect.left) / rect.width;
+                video.currentTime = pos * video.duration;
+            });
+            
+            // Plein écran
+            fullscreenBtn.addEventListener('click', function() {
+                const videoContainer = document.querySelector('.custom-video-player');
+                
+                if (!document.fullscreenElement) {
+                    if (videoContainer.requestFullscreen) {
+                        videoContainer.requestFullscreen();
+                    } else if (videoContainer.webkitRequestFullscreen) {
+                        videoContainer.webkitRequestFullscreen();
+                    } else if (videoContainer.msRequestFullscreen) {
+                        videoContainer.msRequestFullscreen();
+                    }
+                    fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                    fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+                }
+            });
+            
+            // Mettre à jour l'icône de lecture/pause quand la vidéo se joue ou se met en pause
+            video.addEventListener('play', function() {
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            });
+            
+            video.addEventListener('pause', function() {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+            
+            // Réinitialiser l'overlay quand la vidéo se termine
+            video.addEventListener('ended', function() {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                videoOverlay.classList.remove('hidden');
+                video.currentTime = 0;
+            });
+        }
+
+        // Initialiser les animations
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            animateCounter();
+            animateOnScroll();
+            animateQRCodes();
+            setupVideoPlayer();
+            
+            // Ajouter l'année actuelle au copyright
+            const yearSpan = document.querySelector('.copyright');
+            if (yearSpan) {
+                const currentYear = new Date().getFullYear();
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2023', currentYear);
+            }
+            
+            // Effet de saisie pour le titre
+            const title = document.querySelector('.logo span');
+            if (title) {
+                const text = title.textContent;
+                title.textContent = '';
+                
+                for (let i = 0; i < text.length; i++) {
+                    setTimeout(() => {
+                        title.textContent += text[i];
+                    }, i * 100);
+                }
+            }
+            
+            // Effet de scan pour les QR codes
+            const qrCodes = document.querySelectorAll('.qr-code');
+            qrCodes.forEach((qr, index) => {
+                setTimeout(() => {
+                    qr.style.boxShadow = '0 0 20px rgba(255, 102, 0, 0.5)';
+                    setTimeout(() => {
+                        qr.style.boxShadow = 'none';
+                    }, 1000);
+                }, index * 1000);
+            });
+        });
+    </script>
+</body>
+</html>
